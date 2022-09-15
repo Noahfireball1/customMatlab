@@ -10,7 +10,7 @@
 %   - sigma: The standard deviation value for the random variable
 %   - mean: The expectation for the given random variable
 % OUTPUTS:
-%   - gaussianDistVector - Vector of size numSamples containing random
+%   - gaussianDistVector: Vector of size numSamples containing random
 %   values calculated using randn and specified inputs
 % AUTHOR(S): Noah Miller (nsm0014@auburn.edu)
 % DATE: 8/8/2022 
