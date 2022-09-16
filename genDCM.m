@@ -26,11 +26,17 @@ if strcmp('deg',units)
         k = Sequence(i);
         switch k
             case 1
-                Matrix(:,:,i) = [1 0 0;0 cosd(Rotations(i)) sind(Rotations(i));0 -sind(Rotations(i)) cosd(Rotations(i))];
+                Matrix(:,:,i) = [1        0                  0           ;...
+                                 0 cosd(Rotations(i)) -sind(Rotations(i));...
+                                 0 sind(Rotations(i)) cosd(Rotations(i))];
             case 2
-                Matrix(:,:,i) = [cosd(Rotations(i)) 0 -sind(Rotations(i));0 1 0;sind(Rotations(i)) 0 cosd(Rotations(i))];
+                Matrix(:,:,i) = [cosd(Rotations(i)) 0 sind(Rotations(i));...
+                                 0                  1        0          ;...
+                                -sind(Rotations(i)) 0 cosd(Rotations(i))];
             case 3
-                Matrix(:,:,i) = [cosd(Rotations(i)) sind(Rotations(i)) 0;-sind(Rotations(i)) cosd(Rotations(i)) 0;0 0 1];
+                Matrix(:,:,i) = [cosd(Rotations(i)) -sind(Rotations(i)) 0;...
+                                 sind(Rotations(i)) cosd(Rotations(i))  0;...
+                                       0                  0             1];
         end
     end
 end
@@ -40,11 +46,17 @@ if strcmp('rad',units)
         k = Sequence(i);
         switch k
             case 1
-                Matrix(:,:,i) = [1 0 0;0 cosd(Rotations(i)) sind(Rotations(i));0 -sind(Rotations(i)) cosd(Rotations(i))];
+                Matrix(:,:,i) = [1        0                  0           ;...
+                                 0 cos(Rotations(i)) -sin(Rotations(i));...
+                                 0 sin(Rotations(i)) cos(Rotations(i))];
             case 2
-                Matrix(:,:,i) = [cosd(Rotations(i)) 0 -sind(Rotations(i));0 1 0;sind(Rotations(i)) 0 cosd(Rotations(i))];
+                Matrix(:,:,i) = [cos(Rotations(i)) 0 sin(Rotations(i));...
+                                 0                 1        0         ;...
+                                -sin(Rotations(i)) 0 cos(Rotations(i))];
             case 3
-                Matrix(:,:,i) = [cosd(Rotations(i)) sind(Rotations(i)) 0;-sind(Rotations(i)) cosd(Rotations(i)) 0;0 0 1];
+                Matrix(:,:,i) = [cos(Rotations(i)) -sin(Rotations(i)) 0;...
+                                 sin(Rotations(i)) cos(Rotations(i))  0;...
+                                       0                  0             1];
         end
     end
 end
@@ -53,7 +65,7 @@ end
 DCM = Matrix(:,:,1);
 for i = 2:n
 
-    DCM = (DCM'*Matrix(:,:,i)')';
+    DCM = (DCM*Matrix(:,:,i));
 
 end
 end
