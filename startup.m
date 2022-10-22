@@ -13,12 +13,13 @@ set(0,'DefaultFigureWindowStyle','docked')
 currentDir = pwd;
 cMDir = fullfile(userpath,"customMatlab/");
 cd(cMDir)
+fprintf('Pulling latest changes from github.com/Noahfireball1/customMatlab/...\n')
 !git pull
 cd(currentDir)
+addpath(cMDir)
 
 
 
 %% Clearing Variables
-clc
 clear
 
