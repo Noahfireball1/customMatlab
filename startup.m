@@ -5,7 +5,7 @@ close all
 format shortg
 
 %% Figure Parameters
-set(0,'DefaultFigureWindowStyle','docked')
+set(0,'DefaultFigureWindowStyle','normal')
 
 %% Pull customMatlab repository
 
