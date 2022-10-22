@@ -15,7 +15,6 @@
 %           3. 2nd axis
 %           4. 3rd axis
 % OUTPUTS:
-
 %   - r: 1st type quaternion product of q and p
 %
 % AUTHOR(S): Noah Miller (nsm0014@auburn.edu)

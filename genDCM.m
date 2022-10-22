@@ -56,7 +56,7 @@ if strcmp('rad',units)
             case 3
                 Matrix(:,:,i) = [cos(Rotations(i)) -sin(Rotations(i)) 0;...
                                  sin(Rotations(i)) cos(Rotations(i))  0;...
-                                       0                  0             1];
+                                       0                  0           1];
         end
     end
 end
@@ -68,4 +68,5 @@ for i = 2:n
     DCM = (DCM*Matrix(:,:,i));
 
 end
+DCM = DCM';
 end
